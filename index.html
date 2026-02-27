@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nashville Oversight Council | Nashville, NC</title>
+  <meta name="description" content="A citizen-led advisory council promoting transparency, accountability, and fiscal responsibility in Nashville, North Carolina." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121b2d;
+      --text:#f4f6fb;
+      --muted:#c7cfdd;
+      --line:#26324b;
+      --accent:#d4af37;
+      --btn:#1f2b45;
+      --max:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 20% 0%, #152447 0%, var(--bg) 55%);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    header{
+      position:sticky; top:0; z-index:10;
+      background: rgba(11,18,32,.75);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(38,50,75,.6);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.4px;
+    }
+    .seal{
+      width:34px; height:34px; border-radius:50%;
+      border:1px solid rgba(212,175,55,.7);
+      background: linear-gradient(145deg, rgba(212,175,55,.25), rgba(212,175,55,.05));
+      display:grid; place-items:center;
+      font-size:14px;
+    }
+    nav ul{
+      display:flex; gap:16px; list-style:none; margin:0; padding:0;
+      color:var(--muted); font-weight:600; font-size:14px;
+    }
+    nav a:hover{color:var(--text)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      border:1px solid rgba(212,175,55,.55);
+      background: transparent;
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(212,175,55,.9), rgba(212,175,55,.65));
+      border:1px solid rgba(212,175,55,1);
+      color:#101522;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .hero{
+      padding:60px 0 26px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:start;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:44px;
+      letter-spacing:-.5px;
+      line-height:1.1;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16.5px;
+      max-width:62ch;
+    }
+    .tag{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(38,50,75,.85);
+      background: rgba(18,27,45,.6);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:16px;
+    }
+    .tag span{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--accent);
+      display:inline-block;
+    }
+    .card{
+      background: rgba(18,27,45,.85);
+      border:1px solid rgba(38,50,75,.75);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0 0 10px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14.5px}
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .kpi{
+      border:1px solid rgba(38,50,75,.75);
+      background: rgba(11,18,32,.35);
+      border-radius: 12px;
+      padding:12px;
+    }
+    .kpi .num{font-weight:900; font-size:18px}
+    .kpi .lbl{color:var(--muted); font-size:12.5px; margin-top:2px}
+    section{
+      padding:24px 0;
+    }
+    .section-title{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      margin:0 0 12px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .section-title .hint{color:var(--muted); font-size:14px}
+    .cols{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .pill{
+      display:inline-block;
+      color:#101522;
+      background: rgba(212,175,55,.95);
+      padding:4px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+    ul.clean{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(38,50,75,.75);
+      background: rgba(18,27,45,.65);
+    }
+    .step .n{
+      width:28px; height:28px; border-radius:50%;
+      display:grid; place-items:center;
+      background: rgba(212,175,55,.18);
+      border:1px solid rgba(212,175,55,.55);
+      color:var(--text);
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .step h4{margin:0 0 6px}
+    .step p{margin:0; color:var(--muted); font-size:14px}
+    .updates{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    footer{
+      border-top:1px solid rgba(38,50,75,.75);
+      padding:22px 0 40px;
+      color:var(--muted);
+      font-size:13.5px;
+    }
+    .foot{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;
+    }
+    .small{color:var(--muted)}
+    .disclaimer{
+      margin-top:10px;
+      color:rgba(199,207,221,.85);
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .updates{grid-template-columns:1fr}
+      nav ul{display:none}
+      h1{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="seal">NC</div>
+        <div>
+          Nashville Oversight Council
+          <div style="font-weight:700;color:var(--muted);font-size:12.5px;margin-top:2px;">Nashville, North Carolina</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#principles">Principles</a></li>
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Get Updates</a>
+        <a class="btn primary" href="#join">Join</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="grid">
+        <div>
+          <div class="tag"><span></span> Citizen-led. Fact-based. Focused on accountability.</div>
+          <h1>Nashville Oversight Council</h1>
+          <p class="sub">
+            A grassroots citizens’ advisory council promoting transparency, accountability, and responsible governance in Nashville, North Carolina.
+          </p>
+          <div class="cta" style="margin-top:14px;">
+            <a class="btn primary" href="#join">Join the Council</a>
+            <a class="btn" href="#mission">Read the Mission</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Quick facts">
+          <h3>What we do</h3>
+          <p>
+            We review public information, summarize key items, and provide advisory recommendations rooted in fiscal responsibility, open government, and practical community input.
+          </p>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="num">Review</div>
+              <div class="lbl">Agendas, budgets, ordinances</div>
+            </div>
+            <div class="kpi">
+              <div class="num">Inform</div>
+              <div class="lbl">Plain-language summaries</div>
+            </div>
+            <div class="kpi">
+              <div class="num">Advise</div>
+              <div class="lbl">Written recommendations</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="section-title">
+        <h2>Mission</h2>
+        <div class="hint">Headquartered in Nashville, NC</div>
+      </div>
+      <div class="card">
+        <p>
+          The Nashville Oversight Council exists to promote transparency, accountability, and responsible governance in Nashville, North Carolina.
+          We are a grassroots, citizen-led body committed to ensuring that local government decisions reflect the values, priorities, and long-term interests of the people who live, work, and invest in our community.
+          We stand for fiscal discipline, public safety, property rights, and open government.
+        </p>
+      </div>
+
+      <div class="cols" style="margin-top:12px;">
+        <div class="card">
+          <div class="pill">Review</div>
+          <p style="margin-top:10px;">Track agendas, budgets, ordinances, and major proposals. Focus on impact to taxes, services, and long-term costs.</p>
+        </div>
+        <div class="card">
+          <div class="pill">Inform</div>
+          <p style="margin-top:10px;">Publish clear summaries so residents understand what’s being proposed, when decisions happen, and what’s at stake.</p>
+        </div>
+        <div class="card">
+          <div class="pill">Advise</div>
+          <p style="margin-top:10px;">Deliver written, practical recommendations to the City Council based on facts, community input, and responsible governance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="section-title">
+        <h2>How a council like this works</h2>
+        <div class="hint">Grassroots structure with a professional process</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h4>Track</h4>
+          <p>Monitor public agendas, minutes, budgets, and proposals.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h4>Research</h4>
+          <p>Verify facts, summarize costs, and document key tradeoffs.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h4>Listen</h4>
+          <p>Gather resident input through meetings, surveys, and outreach.</p>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <h4>Recommend</h4>
+          <p>Publish advisory reports and present recommendations respectfully.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 style="margin:0 0 10px;">Council structure</h3>
+        <p>
+          Members volunteer in committees such as Budget and Finance, Public Safety, Planning and Development, and Infrastructure.
+          Committees produce short reports and proposed recommendations. The Council votes to adopt final advisory positions.
+        </p>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="section-title">
+        <h2>Principles</h2>
+        <div class="hint">Common-sense standards for local governance</div>
+      </div>
+      <div class="card">
+        <ul class="clean">
+          <li>Transparency in actions, spending, and contracting</li>
+          <li>Fiscal responsibility and taxpayer protection</li>
+          <li>Public safety and reliable core services</li>
+          <li>Respect for constitutional rights and property ownership</li>
+          <li>Citizen participation and open meetings</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="updates">
+      <div class="section-title">
+        <h2>Updates</h2>
+        <div class="hint">Replace these placeholders as you launch</div>
+      </div>
+
+      <div class="updates">
+        <div class="card">
+          <h3>Next meeting</h3>
+          <p>Date and location coming soon. We’ll post the agenda and public comment guidance here.</p>
+        </div>
+        <div class="card">
+          <h3>Latest report</h3>
+          <p>First advisory memo in progress. It will include summary, facts, and recommendations.</p>
+        </div>
+        <div class="card">
+          <h3>City agenda link</h3>
+          <p>Add the official city council agenda link here once confirmed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="section-title">
+        <h2>Join or get updates</h2>
+        <div class="hint">Start small. Build the list.</div>
+      </div>
+
+      <div class="card">
+        <p style="margin:0 0 12px;color:var(--muted);">
+          Sign up to receive meeting notices, summaries, and reports. You can also volunteer for a committee.
+        </p>
+
+        <form onsubmit="return handleSignup(event)">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+            <input required name="name" placeholder="Full name" style="padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(11,18,32,.4);color:var(--text);" />
+            <input required type="email" name="email" placeholder="Email address" style="padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(11,18,32,.4);color:var(--text);" />
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="btn primary" type="submit">Request updates</button>
+            <span id="signupMsg" class="small"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <div class="hint">Use a dedicated email for the council</div>
+      </div>
+      <div class="card">
+        <p style="margin:0;color:var(--muted);">
+          Email: info@nashvilleoversightcouncil.org (placeholder) <br/>
+          Location: Nashville, North Carolina
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div class="brand" style="gap:10px;">
+            <div class="seal">NC</div>
+            <div>Nashville Oversight Council</div>
+          </div>
+          <div class="small">© <span id="yr"></span> Nashville Oversight Council</div>
+        </div>
+        <div class="disclaimer">
+          Disclaimer: The Nashville Oversight Council is an independent citizens’ advisory group. We do not speak for the City of Nashville or the Nashville City Council.
+        </div>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  function handleSignup(e){
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const msg = document.getElementById("signupMsg");
+
+    // Placeholder behavior. Replace with Mailchimp, ConvertKit, Google Forms, etc.
+    msg.textContent = "Thanks, " + name + ". You’re on the list (demo).";
+    form.reset();
+    return false;
+  }
+</script>
+</body>
+</html>
